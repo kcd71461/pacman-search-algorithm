@@ -137,7 +137,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
     """
     A* algorithm으로 start state로부터 goal까지의 actions들을 계산하고 반환
     Expanded Tree의 f(n)이 최소가 되고 goal state인 leaf node를 찾을때까지 tree를 계속 expand한다
-
+         
     :param problem: problem
     :param heuristic: 사용할 heuristic function
     :return: start state로부터 goal까지의 action들
