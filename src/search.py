@@ -114,7 +114,7 @@ def travelRecursively(problem, state, depth, visited, actions):
         actions.append(child[1])
         result = travelRecursively(problem, child[0], depth - 1, visited, actions)
         if result:
-            print(visited)
+            # print(visited)
             return True
         visited.pop()
         actions.pop()
