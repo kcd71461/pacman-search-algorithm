@@ -156,7 +156,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
             self.state = state
             self.prevState = None if parentLeaf is None else parentLeaf.state
 
-            self._totalCoast = cost if parentLeaf is None else (parentLeaf.getGn() + cost)  # set g(n)
+            self._totalCost = cost if parentLeaf is None else (parentLeaf.getGn() + cost)  # set g(n)
             # <editor-fold desc="parent 까지의 actions와 직전에서 현재로 가는 action을 저장, memory save">
             self._prevAction = action
             if parentLeaf is None:
@@ -169,13 +169,13 @@ def aStarSearch(problem, heuristic=customHeuristic):
             """
             :return: g(n): cost so far to reach n
             """
-            return self._totalCoast
+            return self._totalCost
 
         def getFn(self):
             """
             :return: f(n):estimated total cost of path through n to goal.
             """
-            return heuristic(self.state, problem) + self._totalCoast
+            return heuristic(self.state, problem) + self._totalCost
 
         def getTotalActions(self):
             """
