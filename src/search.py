@@ -191,7 +191,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
     def expand():
         """
         f(n) 값이 제일 작은 node를 확장시킨다.
-        :return: 확장가능 여부를 반환. False 반환시 goal state가
+        :return: 확장가능 여부를 반환. False 반환시 goal state가 leaf들 중에 존재한다
         """
         global goalActions
         removeLeaf = None
@@ -205,7 +205,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
                 removeLeaf = leaf
         # </editor-fold>
 
-        if removeLeaf is None:
+        if removeLeaf is None:  # never happen!
             return False
 
         if problem.isGoalState(removeLeaf.state):

@@ -137,7 +137,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
     """
     A* algorithm으로 start state로부터 goal까지의 actions들을 계산하고 반환
     Expanded Tree의 f(n)이 최소가 되고 goal state인 leaf node를 찾을때까지 tree를 계속 expand한다
-         
+
     :param problem: problem
     :param heuristic: 사용할 heuristic function
     :return: start state로부터 goal까지의 action들
@@ -191,7 +191,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
     def expand():
         """
         f(n) 값이 제일 작은 node를 확장시킨다.
-        :return: 확장가능 여부를 반환. False 반환시 goal state가
+        :return: 확장가능 여부를 반환. False 반환시 goal state가 leaf들 중에 존재한다
         """
         global goalActions
         removeLeaf = None
@@ -205,7 +205,7 @@ def aStarSearch(problem, heuristic=customHeuristic):
                 removeLeaf = leaf
         # </editor-fold>
 
-        if removeLeaf is None:
+        if removeLeaf is None:  # never happen!
             return False
 
         if problem.isGoalState(removeLeaf.state):
